@@ -1,3 +1,36 @@
 .app {
     height: 100vh;
 }
+
+/* SignIn.js */
+.signin-page {
+    width: 360px;
+    margin: auto;
+    padding: 8% 0 0;
+}
+
+.signin-form {
+    border: 1px solid gray;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    padding: 40px;
+}
+.signin-form input {
+    width: 100%;
+    color: rgb(177, 177, 177);
+    font-size: 14px;
+    border: 0;
+    padding: 15px;
+    margin: 0 0 15px;
+    border: 1px solid gray;
+}
+
+.signin-form button {
+    background: rgb(177, 177, 177);
+    width: 100%;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid gray;
+    padding: 15px;
+    letter-spacing: 2px;
+}

@@ -18,28 +18,28 @@ const SignIn = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            SignIn
-            <input
-                name="email"
-                type="text"
-                placeholder="Enter your email"
-                onChange={handleChange}
-                value={inputs.email}
-            />
-            <input
-                name="password"
-                type="password"
-                placeholder="Enter password"
-                onChange={handleChange}
-                value={inputs.password}
-            />
-            <button>signin</button>
-            {errors.length > 0 ? errors.map(error => <p style={{color: 'red'}}>{error}</p> ) : null}
-        </form>
+        <div className="signin-page">
+            <form onSubmit={handleSubmit} className="signin-form">
+                <input
+                    name="email"
+                    type="text"
+                    placeholder="e-mail"
+                    onChange={handleChange}
+                    value={inputs.email}
+                />
+                <input
+                    name="password"
+                    type="password"
+                    placeholder="password"
+                    onChange={handleChange}
+                    value={inputs.password}
+                />
+                <button>LOGIN</button>
+                {errors.length > 0 ? errors.map(error => <p style={{ color: 'red' }}>{error}</p>) : null}
+            </form>
+        </div>
+
     );
 }
-
-
 
 export default SignIn;

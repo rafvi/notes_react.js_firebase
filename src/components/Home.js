@@ -1,5 +1,4 @@
-import React, { useContext } from 'react';
-import { firebaseAuthContext } from './Provider/AuthProvider';
+import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Menu from './Menu';
@@ -8,12 +7,8 @@ import EditNote from './EditNote';
 import NewNote from './NewNote';
 
 const Home = () => {
-    const { handleSignOut, } = useContext(firebaseAuthContext);
-
     return (
         <div>
-            Home, login Success !
-            <button onClick={handleSignOut}>Sign Out</button>
             <Router>
                 <div className="ui container app">
                     <Menu />
