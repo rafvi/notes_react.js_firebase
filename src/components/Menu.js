@@ -16,7 +16,7 @@ class Menu extends React.Component {
                     </a>
                     <a className="item">
                         <i className="user icon"></i> 
-                        <Link to='./'>Sign In</Link>
+                        <Link to='./'>Sign Out</Link>
                     </a>
                 </div>
             </div>

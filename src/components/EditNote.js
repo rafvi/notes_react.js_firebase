@@ -60,12 +60,12 @@ class EditNote extends React.Component {
             });
 
         // *** Return to main page with notes - './' ***
-        this.props.history.push('/');
+        this.props.history.push('/notes');
     }
 
     cancelBtnClick = () => {
         console.log('cancel button click')
-        this.props.history.push('/');
+        this.props.history.push('/notes');
     }
 }
 

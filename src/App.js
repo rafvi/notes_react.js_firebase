@@ -1,33 +1,25 @@
-import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { firebaseAuthContext } from './components/Provider/AuthProvider'
+import { Route, Switch } from 'react-router-dom';
+import SignIn from './components/SignIn';
+import Home from './components/Home';
 
 import './App.css';
 
-// import Components
-import Menu from './components/Menu';
-import Notes from './components/Notes';
-import EditNote from './components/EditNote';
-import NewNote from './components/NewNote';
-import SignIn from './components/SignIn';
+const App = () => {
+  const { token } = useContext(firebaseAuthContext)
+  console.log("App.js - token: ", token)
 
-class App extends React.Component {
-
-  render() {
-    return (
-      <Router>
-        <div className="ui container app">
-          <Menu />
-          <Route exact path='/' component={SignIn} />
-          <Route path='/newnote' component={NewNote} />
-          <Route path='/editnote' component={EditNote} />
-          <Route path='/notes' component={Notes} />
-        </div>
-      </Router>
-    );
-
-
-  }
-
+  return (
+    <>
+      {/* switch allows switching which components render.  */}
+      <Switch>
+        {/* route allows you to render by url path */}
+        <Route exact path='/' render={rProps => token === null ? <SignIn /> : <Home />} />
+        <Route exact path='/' component={SignIn} />
+      </Switch>
+    </>
+  );
 }
 
 export default App;
