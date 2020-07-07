@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
+import EditorToolbar, {modules, formats} from '../EditorToolbar';
 
 const firebase = require('firebase');
 
@@ -21,7 +23,11 @@ class NewNote extends React.Component {
           placeholder="Enter note title"
           onKeyUp={(e) => this.updateTitle(e.target.value)}
         />
+        <EditorToolbar />
         <ReactQuill
+          theme="snow"
+          modules={modules}
+          formats={formats}
           value={this.state.body}
           onChange={this.updateBody}>
         </ReactQuill>
@@ -62,12 +68,12 @@ class NewNote extends React.Component {
       });
 
     // *** Return to main page with notes - './' ***
-    this.props.history.push('/');
+    this.props.history.push('/notes');
   }
 
   cancelBtnClick = () => {
     console.log('cancel button click')
-    this.props.history.push('/');
+    this.props.history.push('/notes');
   }
 }
 

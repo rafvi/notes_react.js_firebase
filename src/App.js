@@ -16,9 +16,13 @@ const App = () => {
       <div className="ui container app">
       <Switch >
         {/* route allows you to render by url path */}
-        <Route exact path='/' render={rProps => token === null ? <SignIn /> : <Home />} />
+        {/*
+          <Route exact path='/' render={rProps => token === null ? <SignIn /> : <Home />} />
         <Route exact path='/' component={SignIn} />
-      </Switch>
+      
+        */}
+        <Home />
+        </Switch>
     </div>
     </>
   );

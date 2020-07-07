@@ -2,7 +2,9 @@
     height: 100vh;
 }
 
+
 /* SignIn.js */
+
 .signin-page {
     width: 360px;
     margin: auto;
@@ -14,6 +16,7 @@
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
     padding: 40px;
 }
+
 .signin-form input {
     width: 100%;
     color: rgb(177, 177, 177);
