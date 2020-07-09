@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-import EditorToolbar, {modules, formats} from '../EditorToolbar';
+import EditorToolbar, { modules, formats } from '../EditorToolbar';
 
 const firebase = require('firebase');
 
@@ -18,11 +18,13 @@ class NewNote extends React.Component {
   render() {
     return (
       <div>
-        <input
-          type="text"
-          placeholder="Enter note title"
-          onKeyUp={(e) => this.updateTitle(e.target.value)}
-        />
+        <div class="ui input">
+          <input
+            type="text"
+            placeholder="enter note title"
+            onKeyUp={(e) => this.updateTitle(e.target.value)}
+          />
+        </div>
         <EditorToolbar />
         <ReactQuill
           theme="snow"

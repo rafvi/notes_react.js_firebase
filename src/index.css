@@ -5,22 +5,18 @@
 
 /* Set dropdown font-families */
 .ql-formats .ql-font [data-label="Georgia"]::before { 
-    color: red;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .ql-formats .ql-font [data-label="Courier"]::before { 
-    color: rgb(17, 0, 255);
     font-family: 'Courier New', Courier, monospace;
 }
 
 /* Set content font-families */
 .ql-font-Georgia {
-    color: red;
     font-family: Georgia, 'Times New Roman', Times, serif;
   }
 
 .ql-font-Courier {
-    color: rgb(17, 0, 255);
     font-family: 'Courier New', Courier, monospace;
   }

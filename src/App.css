@@ -37,3 +37,31 @@
     padding: 15px;
     letter-spacing: 2px;
 }
+
+/* Notes.js*/
+
+
+/* NewNote.js && EditNote.js*/
+
+.ui .input {
+    padding-top: 10px;
+    width: 100%;
+}
+
+.ui.input > input {
+    border-radius: 0;
+}
+
+.ql-toolbar.ql-snow {
+    margin-top: 2px;
+    margin-bottom: 2px;
+    border: 1px solid rgba(34,36,38,.15)
+}
+
+.ql-container .ql-snow {
+    border: 1px solid rgba(34,36,38,.15)
+}
+
+.ui.basic.blue.button, .ui.basic.blue.buttons .button {
+    margin-top: 10px;
+}

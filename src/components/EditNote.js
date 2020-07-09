@@ -17,12 +17,14 @@ class EditNote extends React.Component {
     render() {
         return (
             <div>
-                <input
-                    type="text"
-                    placeholder="Enter note title"
-                    value={this.state.title}
-                    onChange={(e) => this.updateTitle(e.target.value)}
-                />
+                <div class="ui input">
+                    <input
+                        type="text"
+                        placeholder="Enter note title"
+                        value={this.state.title}
+                        onChange={(e) => this.updateTitle(e.target.value)}
+                    />
+                </div>
                 <ReactQuill
                     value={this.state.body}
                     onChange={this.updateBody}>
