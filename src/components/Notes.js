@@ -18,39 +18,48 @@ class Notes extends React.Component {
 
         if (notes) {
             return (
-                <div>
+                <div className="notes-container">
                     {
                         notes.map((_note, _index) => {
                             return (
                                 <div key={_index}>
-                                    <a href='#'>
-                                        <h2 onClick={() => this.selectNote(_note, _index)}>{_note.title}</h2>
-                                    </a>
-                                    {// timestamp
-                                        (_note.timestamp) ? (
-                                            _note.timestamp.toDate().getDate() + '.' +
-                                            ((_note.timestamp.toDate().getMonth() < 10) ?
-                                                ('0' + _note.timestamp.toDate().getMonth()) :
-                                                (_note.timestamp.toDate().getMonth()))
-                                            + '.' +
-                                            _note.timestamp.toDate().getFullYear() + ' ' +
-                                            _note.timestamp.toDate().getHours() + ':' +
-                                            ((_note.timestamp.toDate().getMinutes() < 10) ?
-                                                ('0' + _note.timestamp.toDate().getMinutes()) :
-                                                (_note.timestamp.toDate().getMinutes()))
-                                        ) : 'Loading...'
+                                    <div className='notes-header'>
+                                        <div className="notes-title">
+                                            <h2 onClick={() => this.selectNote(_note, _index)}>{_note.title}</h2>
+                                        </div>
+                                        <div className="notes-timestamp">
+                                            {// timestamp
+                                                (_note.timestamp) ? (
+                                                    _note.timestamp.toDate().getDate() + '.' +
+                                                    ((_note.timestamp.toDate().getMonth() < 10) ?
+                                                        ('0' + _note.timestamp.toDate().getMonth()) :
+                                                        (_note.timestamp.toDate().getMonth()))
+                                                    + '.' +
+                                                    _note.timestamp.toDate().getFullYear() + ', ' +
+                                                    _note.timestamp.toDate().getHours() + ':' +
+                                                    ((_note.timestamp.toDate().getMinutes() < 10) ?
+                                                        ('0' + _note.timestamp.toDate().getMinutes()) :
+                                                        (_note.timestamp.toDate().getMinutes()))
+                                                ) : 'Loading...'
+                                            }
+                                        </div>
+                                        <div className="notes-category">
+                                            Category: {_note.category}
+                                        </div>
+                                    </div>
 
-                                    }
+
                                     <div dangerouslySetInnerHTML={createMarkup(_note.body)} />
 
-                                    <button onClick={() => this.deleteNote(_note)}>Delete</button>
-
-                                    <button><Link to={{
+                                    <button class="ui blue basic button"><Link to={{
                                         pathname: './editnote',
                                         id: _note.id,
                                         title: _note.title,
+                                        category: _note.category,
                                         body: _note.body
                                     }}>Edit</Link></button>
+
+                                    <button class="ui red basic button" onClick={() => this.deleteNote(_note)}>Delete</button>
 
                                     <div className="ui divider"></div>
                                 </div>

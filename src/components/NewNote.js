@@ -11,29 +11,40 @@ class NewNote extends React.Component {
 
     this.state = {
       title: '',
-      body: ''
+      body: '',
+      category: ''
     }
   }
 
   render() {
     return (
       <div>
-        <div class="ui input">
-          <input
-            type="text"
-            placeholder="enter note title"
-            onKeyUp={(e) => this.updateTitle(e.target.value)}
-          />
+        <div className="newnote-editnote-header">
+          <div class="ui input">
+            <input
+              type="text"
+              placeholder="enter note title"
+              onKeyUp={(e) => this.addTitle(e.target.value)}
+            />
+          </div>
+          <div class="ui input">
+            <input
+              type="text"
+              placeholder="enter note category"
+              onKeyUp={(e) => this.addCategory(e.target.value)}
+            />
+          </div>
         </div>
+
         <EditorToolbar />
         <ReactQuill
           theme="snow"
           modules={modules}
           formats={formats}
           value={this.state.body}
-          onChange={this.updateBody}>
+          onChange={this.addBody}>
         </ReactQuill>
-        <button className="ui blue basic button"
+        <button className="ui green basic button"
           onClick={this.newNoteBtnClick}
         >
           New Note
@@ -47,12 +58,17 @@ class NewNote extends React.Component {
     )
   }
 
-  updateTitle = (e) => {
+  addTitle = (e) => {
     this.setState({ title: e })
     console.log(this.state.title)
   }
 
-  updateBody = async (value) => {
+  addCategory = (e) => {
+    this.setState({ category: e })
+    console.log(this.state.category)
+  }
+
+  addBody = async (value) => {
     await this.setState({ body: value })
     console.log(this.state.body)
   }
@@ -66,6 +82,7 @@ class NewNote extends React.Component {
       .add({
         title: this.state.title,
         body: this.state.body,
+        category: this.state.category,
         timestamp: firebase.firestore.FieldValue.serverTimestamp()
       });
 

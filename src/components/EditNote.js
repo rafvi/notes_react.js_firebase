@@ -10,6 +10,7 @@ class EditNote extends React.Component {
         this.state = {
             id: this.props.location.id,
             title: this.props.location.title,
+            category: this.props.location.category,
             body: this.props.location.body
         }
     }
@@ -17,19 +18,30 @@ class EditNote extends React.Component {
     render() {
         return (
             <div>
-                <div class="ui input">
-                    <input
-                        type="text"
-                        placeholder="Enter note title"
-                        value={this.state.title}
-                        onChange={(e) => this.updateTitle(e.target.value)}
-                    />
+                <div className="newnote-editnote-header">
+                    <div class="ui input">
+                        <input
+                            type="text"
+                            placeholder="enter note title"
+                            value={this.state.title}
+                            onChange={(e) => this.updateTitle(e.target.value)}
+                        />
+                    </div>
+                    <div class="ui input">
+                        <input
+                            type="text"
+                            placeholder="enter note category"
+                            value={this.state.category}
+                            onChange={(e) => this.updateCategory(e.target.value)}
+                        />
+                    </div>
                 </div>
+
                 <ReactQuill
                     value={this.state.body}
                     onChange={this.updateBody}>
                 </ReactQuill>
-                <button className="ui blue basic button"
+                <button className="ui green basic button"
                     onClick={this.updateNoteBtnClick}>Update Note
                 </button>
                 <button className="ui orange basic button"
@@ -42,6 +54,11 @@ class EditNote extends React.Component {
     updateTitle = (e) => {
         this.setState({ title: e })
         console.log(this.state.title)
+    }
+
+    updateCategory = (e) => {
+        this.setState({ category: e })
+        console.log(this.state.category)
     }
 
     updateBody = async (value) => {
@@ -58,6 +75,7 @@ class EditNote extends React.Component {
             .update({
                 title: this.state.title,
                 body: this.state.body,
+                category: this.state.category,
                 timestamp: firebase.firestore.FieldValue.serverTimestamp()
             });
 

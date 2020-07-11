@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Quantico&display=swap');
+
 .app {
     height: 100vh;
 }
-
 
 /* SignIn.js */
 
@@ -39,12 +40,46 @@
 }
 
 /* Notes.js*/
+.notes-container {
+    padding-top: 10px;
+}
 
+.notes-header {
+    padding-bottom: 10px;
+}
+
+.notes-category {
+    font-family: 'Quantico', sans-serif;
+}
+
+.notes-title {
+    cursor: pointer;
+}
+
+.notes-title > h2 {
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.notes-timestamp {
+    font-family: 'Quantico', sans-serif;
+    color: rgb(131, 131, 131);
+}
+
+.ui.basic.blue.button, .ui.basic.blue.buttons .button, .ui.basic.red.button, .ui.basic.red.buttons .button {
+    padding: 2px 22px 2px 22px;
+    opacity: 55%;
+    margin-top: 10px;
+}
 
 /* NewNote.js && EditNote.js*/
 
-.ui .input {
+.newnote-editnote-header {
     padding-top: 10px;
+}
+
+.ui .input {
+    padding-bottom: 2px;
     width: 100%;
 }
 
@@ -62,6 +97,6 @@
     border: 1px solid rgba(34,36,38,.15)
 }
 
-.ui.basic.blue.button, .ui.basic.blue.buttons .button {
+.ui.basic.green.button, .ui.basic.green.buttons .button {
     margin-top: 10px;
 }
