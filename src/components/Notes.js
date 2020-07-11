@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 const firebase = require('firebase');
 
 class Notes extends React.Component {
+    _isMounted = false;
     constructor() {
         super();
         this.state = {
@@ -44,14 +45,20 @@ class Notes extends React.Component {
                                             }
                                         </div>
                                         <div className="notes-category">
-                                            Category: {_note.category}
+                                            Category:
+                                            <Link to={{
+                                                pathname: './category',
+                                                category: _note.category
+                                            }}>
+                                                {' ' + _note.category}
+                                            </Link>
                                         </div>
                                     </div>
 
 
                                     <div dangerouslySetInnerHTML={createMarkup(_note.body)} />
 
-                                    <button class="ui blue basic button"><Link to={{
+                                    <button className="ui blue basic button"><Link to={{
                                         pathname: './editnote',
                                         id: _note.id,
                                         title: _note.title,
@@ -59,7 +66,7 @@ class Notes extends React.Component {
                                         body: _note.body
                                     }}>Edit</Link></button>
 
-                                    <button class="ui red basic button" onClick={() => this.deleteNote(_note)}>Delete</button>
+                                    <button className="ui red basic button" onClick={() => this.deleteNote(_note)}>Delete</button>
 
                                     <div className="ui divider"></div>
                                 </div>
@@ -74,6 +81,7 @@ class Notes extends React.Component {
     }
 
     componentDidMount = () => {
+        this._isMounted = true;
         firebase
             .firestore()
             .collection('notes')
@@ -84,8 +92,14 @@ class Notes extends React.Component {
                     data['id'] = _doc.id;
                     return data;
                 });
-                this.setState({ notes: notes });
+                if (this._isMounted) {
+                    this.setState({ notes: notes });
+                }
             })
+    }
+
+    componentWillUnmount = () => {
+        this._isMounted = false;
     }
 
     selectNote = (note, index) => {
@@ -98,18 +112,6 @@ class Notes extends React.Component {
             .collection('notes')
             .doc(note.id)
             .delete()
-    }
-
-    editNote = (id, note) => {
-        firebase
-            .firestore()
-            .collection('notes')
-            .doc(id)
-            .update({
-                title: note.title,
-                body: note.body,
-                timestamp: firebase.firestore.FieldValue.serverTimestamp()
-            })
     }
 }
 

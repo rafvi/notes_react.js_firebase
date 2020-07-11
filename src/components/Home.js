@@ -5,6 +5,7 @@ import Menu from './Menu';
 import Notes from './Notes';
 import EditNote from './EditNote';
 import NewNote from './NewNote';
+import Category from './Category';
 
 const Home = () => {
     return (
@@ -15,6 +16,7 @@ const Home = () => {
                     <Route path='/newnote' component={NewNote} />
                     <Route path='/editnote' component={EditNote} />
                     <Route path='/notes' component={Notes} />
+                    <Route path='/category' component={Category} />
                 </div>
             </Router>
         </div>

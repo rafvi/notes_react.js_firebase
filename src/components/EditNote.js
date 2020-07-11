@@ -19,7 +19,7 @@ class EditNote extends React.Component {
         return (
             <div>
                 <div className="newnote-editnote-header">
-                    <div class="ui input">
+                    <div className="ui input">
                         <input
                             type="text"
                             placeholder="enter note title"
@@ -27,7 +27,7 @@ class EditNote extends React.Component {
                             onChange={(e) => this.updateTitle(e.target.value)}
                         />
                     </div>
-                    <div class="ui input">
+                    <div className="ui input">
                         <input
                             type="text"
                             placeholder="enter note category"
@@ -42,10 +42,10 @@ class EditNote extends React.Component {
                     onChange={this.updateBody}>
                 </ReactQuill>
                 <button className="ui green basic button"
-                    onClick={this.updateNoteBtnClick}>Update Note
+                    onClick={this.updateNote}>Update Note
                 </button>
                 <button className="ui orange basic button"
-                    onClick={this.cancelBtnClick}>Cancel
+                    onClick={this.cancelNoteUpdate}>Cancel
                 </button>
             </div>
         )
@@ -65,7 +65,7 @@ class EditNote extends React.Component {
         await this.setState({ body: value })
     }
 
-    updateNoteBtnClick = async () => {
+    updateNote = async () => {
         console.log('new note button click')
         // ***Add new note to firebase-Database ***
         firebase
@@ -83,7 +83,7 @@ class EditNote extends React.Component {
         this.props.history.push('/notes');
     }
 
-    cancelBtnClick = () => {
+    cancelNoteUpdate = () => {
         console.log('cancel button click')
         this.props.history.push('/notes');
     }
