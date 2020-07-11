@@ -4,6 +4,11 @@
     height: 100vh;
 }
 
+.ui.menu li.item:hover {
+    cursor: pointer;
+    background: rgba(0,0,0,.03);
+    color: rgba(0,0,0,.95);
+}
 /* SignIn.js */
 
 .signin-page {

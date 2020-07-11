@@ -8,18 +8,26 @@ const Menu = () => {
     return (
         <div className="ui attached stackable menu">
             <div className="ui container">
-                <a className="item">
+                <li className="item">
                     <i className="home icon"></i>
                     <Link to='./notes'>Notes</Link>
-                </a>
-                <a className="item">
+                </li>
+                <li className="item">
                     <i className="pencil alternate icon"></i>
                     <Link to='./newnote'>New Note</Link>
-                </a>
-                <a className="item">
+                </li>
+                <li className="item">
                     <i className="user icon"></i>
                     <Link to='./' onClick={handleSignOut}>Sign Out</Link>
-                </a>
+                </li>
+            </div>
+            <div className="right menu">
+                <div className="item">
+                    <div className="ui transparent icon input">
+                        <input type="text" placeholder="Search..." />
+                        <i className="search link icon"></i>
+                    </div>
+                </div>
             </div>
         </div>
     );
