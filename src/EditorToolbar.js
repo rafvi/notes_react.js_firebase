@@ -46,9 +46,9 @@ export const QuillToolbar = () => (
                 <option value="Courier">Courier</option>
             </select>
             <select className="ql-header" defaultValue="3">
-                <option value="1">Heading</option>
-                <option value="2">Subheading</option>
-                <option value="3">Normal</option>
+                <option value="2">Heading</option>
+                <option value="3">Subheading</option>
+                <option value="4">Normal</option>
             </select>
         </span>
         <span className="ql-formats">
