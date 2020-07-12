@@ -55,7 +55,6 @@ class Notes extends React.Component {
                                         </div>
                                     </div>
 
-
                                     <div dangerouslySetInnerHTML={createMarkup(_note.body)} />
 
                                     <button className="ui blue basic button"><Link to={{
