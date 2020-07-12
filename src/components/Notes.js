@@ -23,7 +23,7 @@ class Notes extends React.Component {
                     {
                         notes.map((_note, _index) => {
                             return (
-                                <div key={_index}>
+                                <div className="note" key={_index}>
                                     <div className='notes-header'>
                                         <div className="notes-title">
                                             <h2 onClick={() => this.selectNote(_note, _index)}><span>{_note.title}</span></h2>
@@ -71,8 +71,6 @@ class Notes extends React.Component {
                                     }}>
                                         Delete
                                             </button>
-
-                                    <div className="ui divider"></div>
                                 </div>
                             );
                         })

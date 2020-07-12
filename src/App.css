@@ -50,6 +50,12 @@
     padding-top: 10px;
 }
 
+.note {
+    border: 1px solid #d4d4d5;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
 .notes-header {
     padding-bottom: 10px;
 }
