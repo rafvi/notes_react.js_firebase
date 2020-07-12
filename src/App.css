@@ -57,7 +57,7 @@
     font-family: 'Quantico', sans-serif;
 }
 
-.notes-title {
+.notes-title > h2 > span {
     cursor: pointer;
 }
 

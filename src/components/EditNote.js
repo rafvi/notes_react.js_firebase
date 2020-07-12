@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactQuill from 'react-quill';
 
+import EditorToolbar, { modules, formats } from '../EditorToolbar';
+
 const firebase = require('firebase');
 
 class EditNote extends React.Component {
@@ -36,8 +38,11 @@ class EditNote extends React.Component {
                         />
                     </div>
                 </div>
-
+                <EditorToolbar />
                 <ReactQuill
+                    theme="snow"
+                    modules={modules}
+                    formats={formats}
                     value={this.state.body}
                     onChange={this.updateBody}>
                 </ReactQuill>

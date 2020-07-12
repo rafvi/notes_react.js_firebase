@@ -26,7 +26,7 @@ class Notes extends React.Component {
                                 <div key={_index}>
                                     <div className='notes-header'>
                                         <div className="notes-title">
-                                            <h2 onClick={() => this.selectNote(_note, _index)}>{_note.title}</h2>
+                                            <h2 onClick={() => this.selectNote(_note, _index)}><span>{_note.title}</span></h2>
                                         </div>
                                         <div className="notes-timestamp">
                                             {// timestamp
@@ -66,7 +66,12 @@ class Notes extends React.Component {
                                         body: _note.body
                                     }}>Edit</Link></button>
 
-                                    <button className="ui red basic button" onClick={() => this.deleteNote(_note)}>Delete</button>
+                                    <button className="ui red basic button" onClick={() => {
+                                        if (window.confirm('Are you sure you wish to delete this note?'))
+                                            this.deleteNote(_note)
+                                    }}>
+                                        Delete
+                                            </button>
 
                                     <div className="ui divider"></div>
                                 </div>
