@@ -21,14 +21,17 @@ const Menu = () => {
                     <Link to='./' onClick={handleSignOut}>Sign Out</Link>
                 </li>
             </div>
-            <div className="right menu">
-                <div className="item">
-                    <div className="ui transparent icon input">
-                        <input type="text" placeholder="Search..." />
-                        <i className="search link icon"></i>
+
+            {/* *** Search bar ***
+                <div className="right menu">
+                    <div className="item">
+                        <div className="ui transparent icon input">
+                            <input type="text" placeholder="Search..." />
+                            <i className="search link icon"></i>
+                        </div>
                     </div>
                 </div>
-            </div>
+            */}
         </div>
     );
 };

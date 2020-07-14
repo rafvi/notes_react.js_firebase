@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const firebase = require('firebase');
 
-class Notes extends React.Component {
+class Category extends React.Component {
     _isMounted = false;
     constructor(props) {
         super(props);
@@ -118,4 +118,4 @@ class Notes extends React.Component {
     }
 }
 
-export default Notes;
+export default Category;
