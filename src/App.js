@@ -13,13 +13,13 @@ const App = () => {
   return (
     <>
       {/* switch allows switching which components render.  */}
-      <div className="ui container app">
+      <div>
         <Switch >
-          {/* route allows you to render by url path */}
+          {/* route allows you to render by url path 
 
           <Route exact path='/' render={rProps => token === null ? <SignIn /> : <Home />} />
           <Route exact path='/' component={SignIn} />
-
+*/}
           <Home />
         </Switch>
       </div>

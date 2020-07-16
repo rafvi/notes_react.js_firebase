@@ -6,13 +6,15 @@ import Notes from './Notes';
 import EditNote from './EditNote';
 import NewNote from './NewNote';
 import Category from './Category';
+import Header from './Header';
 
 const Home = () => {
     return (
         <div>
             <Router>
+                <Menu />
+                <Header />
                 <div className="ui container app">
-                    <Menu />
                     <Route path='/newnote' component={NewNote} />
                     <Route path='/editnote' component={EditNote} />
                     <Route path='/notes' component={Notes} />

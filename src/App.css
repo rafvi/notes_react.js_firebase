@@ -1,15 +1,55 @@
 @import url('https://fonts.googleapis.com/css2?family=Quantico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap');
 
-.app {
+.ui .container .app {
     height: 100vh;
 }
 
+.ui.attached.menu {
+    background: #84bbe5;
+    color: white;
+}
+.ui.attached.menu:not(.tabular) {
+    border: none;
+}
+.ui.menu:not(.secondary):not(.text):not(.tabular):not(.borderless) > .container > .item:not(.right):not(.borderless):first-child {
+    border-left: none;
+}
+.ui.menu .item::before {
+	background: none
+}
 .ui.menu li.item:hover {
     cursor: pointer;
-    background: rgba(0,0,0,.03);
-    color: rgba(0,0,0,.95);
+    background: #282928;
+    color: white;
 }
+.ui.menu .item > a:not(.ui), .ui.menu .item > p:only-child, .ui.menu .text.item > *{
+    color: white;
+}
+
+.header {
+    background: #282928;
+}
+
+.header-logo {
+    padding: 120px 50px;
+    width: 1127px;
+    margin: 0 auto;
+    text-align: center;
+}
+.header-text {
+    font-size: 24px;
+    font-family: 'Nothing You Could Do', cursive;
+    text-decoration: none;
+    cursor: pointer;
+}
+.golden-thought {
+    color: white;
+    font-family: 'Nothing You Could Do', cursive;
+    font-size: 18px;
+}
+
 /* SignIn.js */
 
 .signin-page {
