@@ -49,6 +49,10 @@
     font-family: 'Nothing You Could Do', cursive;
     font-size: 18px;
 }
+i.icon.angle.double.right:before, 
+i.icon.angle.double.left:before {
+    color: #84bbe5;
+}
 
 /* SignIn.js */
 
